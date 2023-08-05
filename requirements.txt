@@ -1,0 +1,3 @@
+streamlit
+json
+Sidebar-nav-custom-icons-streamlit==0.0.4
