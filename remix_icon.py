@@ -5,7 +5,7 @@ from custom_sidebar_icons import Set_Nav_Emojis as set_Nav
 
 st.set_page_config(layout="wide")
 
-with open("./data.json", "r") as read_file:
+with open("./data.json") as read_file:
     emojis_list = json.load(read_file)
 
 emojisOrender = set_Nav(emojis_list)
