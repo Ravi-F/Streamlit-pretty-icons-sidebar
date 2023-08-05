@@ -4,7 +4,7 @@ from custom_sidebar_icons import Set_Nav_Emojis as set_Nav
 
 st.set_page_config(layout="wide")
 
- Data = [ 
+emojis_list = [ 
     {"emojiLibrary":"remix_icon","iconName":"ri-verified-badge-fill", "style":"", "elementID":"",}',
     {"emojiLibrary":"icon_8", "iconName":"", "emojiObject":{'src':"https://img.icons8.com/fluency/48/smiling.png", 'height':50, 'width':50, 'alt':'smiling'}, "style":"", "elementID":"test-icon" },'
     {"emojiLibrary":"tabler_icons", "iconName":"ti ti-adjustments-pin", "style":"", "elementID":"test-icon"},'
