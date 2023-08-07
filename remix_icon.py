@@ -15,7 +15,7 @@ emojis_list = [
 # emojisOrender = set_Nav(emojis_list)
 # emojisOrender.show_me_the_icons_Render()
 
-query = "iframe[title='streamlitApp']
+query = "iframe[title='streamlitApp']"
 
 js = f"""
         <script>
