@@ -19,7 +19,7 @@ if "sideNav" not in st.session_state:
     st.session_state['sideNav'] = False
 
 
-query = "iframe[class*='styles_iframe']"
+query = "iframe[class*='styles_iframe'] iframe[title='streamlitApp']"
 
 js = f"""
         <script>
