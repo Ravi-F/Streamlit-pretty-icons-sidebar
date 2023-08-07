@@ -12,8 +12,8 @@ emojis_list = [
     {"emojiLibrary":"line_awesome", "iconName":"las la-dragon", "style":"", "elementID":"test-icon"},
 ]
 
-# emojisOrender = set_Nav(emojis_list)
-# emojisOrender.show_me_the_icons_Render()
+emojisOrender = set_Nav(emojis_list)
+emojisOrender.show_me_the_icons_Render()
 
 if "sideNav" not in st.session_state:
     st.session_state['sideNav'] = False
