@@ -19,7 +19,7 @@ if "sideNav" not in st.session_state:
     st.session_state['sideNav'] = False
 
 
-query = "window.top.document.querySelectorAll('iframe[title='streamlitApp']')[0].contentDocument.head" 
+query = """window.top.document.querySelectorAll("iframe[title='streamlitApp']")[0].contentDocument.head""" 
 
 js = f"""
         <script>
