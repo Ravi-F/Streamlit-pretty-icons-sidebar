@@ -1,1 +1,1 @@
-Sidebar-nav-custom-icons-streamlit==0.0.4
+Sidebar-nav-custom-icons-streamlit==0.0.5
