@@ -12,8 +12,27 @@ emojis_list = [
     {"emojiLibrary":"line_awesome", "iconName":"las la-dragon", "style":"", "elementID":"test-icon"},
 ]
 
-emojisOrender = set_Nav(emojis_list)
-emojisOrender.show_me_the_icons_Render()
+# emojisOrender = set_Nav(emojis_list)
+# emojisOrender.show_me_the_icons_Render()
+
+query = "iframe[title='streamlitApp']
+
+js = f"""
+        <script>
+            toAppend = parent.document.querySelectorAll('{query}')
+            const GoogleEmoji = document.createElement("link");
+            GoogleEmoji.href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0";
+            GoogleEmoji.rel = "stylesheet";
+            toAppend[0].appendChild(GoogleEmoji);
+        </script>
+    """
+
+placeholder = st.empty()
+with placeholder.container():
+    st.components.v1.html(js, height=0, width=0)
+    st.experiemental_rerun()
+    time.sleep(1)
+placeholder.empty()
 
 st.write("Build you MVP/App with prettier emojis")
 st.write("I built this because I am currently trying to build a MVP for a start up and was displeased with the icons streamlit typically uses. Thanks to [ @jaypinho](https://discuss.streamlit.io/u/jaypinho) and [@mathcatsand ](https://discuss.streamlit.io/u/mathcatsand) from [this post](https://discuss.streamlit.io/t/top-level-links-from-a-component-iframe/36875/9) I was able to build a javascript solution to inject prettier icons.")
