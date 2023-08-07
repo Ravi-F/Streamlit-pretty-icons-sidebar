@@ -23,7 +23,7 @@ query = "iframe[title='streamlitApp']"
 
 js = f"""
         <script>
-            toAppend = parent.document.querySelectorAll('{query}')
+            toAppend = parent.document.querySelectorAll({query})
             const GoogleEmoji = document.createElement("link");
             GoogleEmoji.href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0";
             GoogleEmoji.rel = "stylesheet";
