@@ -23,7 +23,9 @@ query = "iframe[title='streamlitApp']"
 
 js = f"""
         <script>
-            console.log("{query}")
+         toAppend = parent.document.querySelectorAll("{query}")
+            
+            console.log("{query}", toAppend)
         </script>
     """
 st.components.v1.html(js, height=0, width=0)
