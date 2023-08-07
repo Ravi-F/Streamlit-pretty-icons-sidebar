@@ -5,11 +5,11 @@ from custom_sidebar_icons import Set_Nav_Emojis as set_Nav
 st.set_page_config(layout="wide")
 
 emojis_list = [ 
-    {"emojiLibrary":"remix_icon","iconName":"ri-verified-badge-fill", "style":"", "elementID":""},
-    {"emojiLibrary":"icon_8", "iconName":"", "emojiObject":{"src":"https://img.icons8.com/fluency/48/smiling.png", "height":50, "width":50, "alt":"smiling"}, "style":"", "elementID":"test-icon" },
-    {"emojiLibrary":"tabler_icons", "iconName":"ti ti-adjustments-pin", "style":"", "elementID":"test-icon"},
-    {"emojiLibrary":"Google_material_symbols", "iconName":"settings_accessibility", "style":"", "elementID":"test-icon"},
-    {"emojiLibrary":"line_awesome", "iconName":"las la-dragon", "style":"", "elementID":"test-icon"},
+    {"iconLibrary":"remix_icon","iconName":"ri-verified-badge-fill", "style":"", "elementID":"test-icon"},
+    {"iconLibrary":"icon_8", "iconName":"", "emojiObject":{"src":"https://img.icons8.com/fluency/48/smiling.png", "height":50, "width":50, "alt":"smiling"}, "style":"", "elementID":"test-icon" },
+    {"iconLibrary":"tabler_icons", "iconName":"ti ti-adjustments-pin", "style":"", "elementID":"test-icon"},
+    {"iconLibrary":"Google_material_symbols", "iconName":"settings_accessibility", "style":"", "elementID":"test-icon"},
+    {"iconLibrary":"line_awesome", "iconName":"las la-dragon", "style":"", "elementID":"test-icon"},
 ]
 
 emojisOrender = set_Nav(emojis_list)
@@ -17,32 +17,6 @@ emojisOrender.show_me_the_icons_Render()
 
 if "sideNav" not in st.session_state:
     st.session_state['sideNav'] = False
-
-
-query = """window.top.document.querySelectorAll("iframe[title='streamlitApp']")[0].contentDocument.head""" 
-
-js = f"""
-        <script>
-             toAppend = {query}
-          const GoogleEmoji = document.createElement("link");
-            GoogleEmoji.href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0";
-            GoogleEmoji.rel = "stylesheet";
-            toAppend.appendChild(GoogleEmoji)
-           
-        
-            console.log({query})
-        </script>
-    """
-st.components.v1.html(js, height=0, width=0)
-# placeholder = st.empty()
-# if st.session_state['sideNav'] == False:
-#     with placeholder.container():
-#         st.components.v1.html(js, height=0, width=0)
-#         st.session_state['sideNav'] = True 
-#         time.sleep(1)
-#         # st.experimental_rerun()
-# else:
-#     placeholder.empty()
 
 st.write("Build you MVP/App with prettier emojis")
 st.write("I built this because I am currently trying to build a MVP for a start up and was displeased with the icons streamlit typically uses. Thanks to [ @jaypinho](https://discuss.streamlit.io/u/jaypinho) and [@mathcatsand ](https://discuss.streamlit.io/u/mathcatsand) from [this post](https://discuss.streamlit.io/t/top-level-links-from-a-component-iframe/36875/9) I was able to build a javascript solution to inject prettier icons.")
