@@ -30,7 +30,6 @@ js = f"""
             toAppend[0].appendChild(GoogleEmoji);
         </script>
     """
-
 if st.session_state['sideNav'] == False:
     placeholder = st.empty()
     with placeholder.container():
