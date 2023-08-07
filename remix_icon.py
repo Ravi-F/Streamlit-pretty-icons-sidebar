@@ -23,7 +23,7 @@ query = "iframe[class*='styles_iframe']"
 
 js = f"""
         <script>
-             toAppend = window.top.document.querySelectorAll("{query}").contentDocument.body.querySelector("head")
+             toAppend = window.top.document.querySelectorAll("{query}")[0].contentDocument.body.head
             
             
             console.log("{query}", toAppend)
