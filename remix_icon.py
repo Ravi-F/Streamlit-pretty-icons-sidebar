@@ -23,11 +23,7 @@ query = "iframe[title='streamlitApp']"
 
 js = f"""
         <script>
-            toAppend = parent.document.querySelectorAll({query})
-            const GoogleEmoji = document.createElement("link");
-            GoogleEmoji.href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0";
-            GoogleEmoji.rel = "stylesheet";
-            console.log(toAppend)
+            console.log({query})
         </script>
     """
 placeholder = st.empty()
@@ -36,7 +32,7 @@ if st.session_state['sideNav'] == False:
         st.components.v1.html(js, height=0, width=0)
         st.session_state['sideNav'] = True 
         time.sleep(1)
-        st.experimental_rerun()
+        # st.experimental_rerun()
 else:
     placeholder.empty()
 
