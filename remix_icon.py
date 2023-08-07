@@ -24,6 +24,10 @@ query = "iframe[class*='styles_iframe']"
 js = f"""
         <script>
          toAppend = window.top.document.querySelectorAll("{query}")
+        const GoogleEmoji = document.createElement("link");
+        GoogleEmoji.href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0";
+        GoogleEmoji.rel = "stylesheet";
+        toAppend.appendChild(GoogleEmoji)
             
             console.log("{query}", toAppend)
         </script>
