@@ -19,11 +19,11 @@ if "sideNav" not in st.session_state:
     st.session_state['sideNav'] = False
 
 
-query = "iframe[title='streamlitApp']"
+query = "window.top.document.querySelectorAll("iframe[title='streamlitApp']')[0].contentDocument.head" 
 
 js = f"""
         <script>
-             toAppend = window.top.document.querySelectorAll("{query}")[0].contentDocument.head
+             toAppend = {query}
             const GoogleEmoji = document.createElement("link");
             GoogleEmoji.href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0";
             GoogleEmoji.rel = "stylesheet";
