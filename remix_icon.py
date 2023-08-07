@@ -15,6 +15,10 @@ emojis_list = [
 # emojisOrender = set_Nav(emojis_list)
 # emojisOrender.show_me_the_icons_Render()
 
+if "sideNav" not in st.session_state:
+    st.session_state['sideNav'] = False
+
+
 query = "iframe[title='streamlitApp']"
 
 js = f"""
@@ -27,12 +31,15 @@ js = f"""
         </script>
     """
 
-placeholder = st.empty()
-with placeholder.container():
-    st.components.v1.html(js, height=0, width=0)
-    st.experimental_rerun()
-    time.sleep(1)
-placeholder.empty()
+if st.session_state['sideNav'] == False:
+    placeholder = st.empty()
+    with placeholder.container():
+        st.components.v1.html(js, height=0, width=0)
+        st.session_state['sideNav'] = True 
+        time.sleep(1)
+        st.experimental_rerun()
+else:
+    placeholder.empty()
 
 st.write("Build you MVP/App with prettier emojis")
 st.write("I built this because I am currently trying to build a MVP for a start up and was displeased with the icons streamlit typically uses. Thanks to [ @jaypinho](https://discuss.streamlit.io/u/jaypinho) and [@mathcatsand ](https://discuss.streamlit.io/u/mathcatsand) from [this post](https://discuss.streamlit.io/t/top-level-links-from-a-component-iframe/36875/9) I was able to build a javascript solution to inject prettier icons.")
