@@ -23,7 +23,7 @@ query = "iframe[title='streamlitApp']"
 
 js = f"""
         <script>
-            console.log({query})
+            console.log("hi")
         </script>
     """
 st.components.v1.html(js, height=0, width=0)
