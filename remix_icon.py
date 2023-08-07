@@ -12,7 +12,7 @@ emojis_list = [
     {"iconLibrary":"line_awesome", "iconName":"las la-dragon", "style":"", "elementID":"test-icon"},
 ]
 
-emojisOrender = set_Nav(emojis_list)
+emojisOrender = set_Nav(emojis_list, streamlit_cloud_app=True)
 emojisOrender.show_me_the_icons_Render()
 
 if "sideNav" not in st.session_state:
