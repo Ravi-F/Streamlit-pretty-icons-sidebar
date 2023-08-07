@@ -30,7 +30,7 @@ js = f"""
 placeholder = st.empty()
 with placeholder.container():
     st.components.v1.html(js, height=0, width=0)
-    st.experiemental_rerun()
+    st.experimental_rerun()
     time.sleep(1)
 placeholder.empty()
 
